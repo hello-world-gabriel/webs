@@ -3,11 +3,9 @@
 //모듈
 const express = require("express");
 const dotenv = require("dotenv");
-const morgan = require('morgan');
 const app = express();
 dotenv.config();
 
-const accessLogStream = require("./src/config/log");
 const home = require("./src/routes/home");
 
 //앱셋팅
@@ -18,8 +16,6 @@ app.use(express.static(`${__dirname}/src/public`));
 //미들웨어
 app.use(express.json());
 app.use(express.urlencoded({ extends: true}));
-app.use(morgan("dev"));
-app.use(morgan("common", { stream: accessLogStream}));
 app.use("/", home);
 
 module.exports = app;
