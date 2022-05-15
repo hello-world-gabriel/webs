@@ -8,7 +8,7 @@ const app = express();
 dotenv.config();
 
 const accessLogStream = require("./src/config/log");
-const home = require("./src/routes/home");  
+const home = require("./src/routes/home");
 
 //앱셋팅
 app.set("views", "./src/views");    
