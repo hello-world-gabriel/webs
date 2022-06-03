@@ -16,6 +16,10 @@ const output = {
         logger.info(`GET /register 304 "회원가입 화면으로이동"`);
         res.render("home/register");
     },
+    community: (req, res) => {
+        logger.info(`GET /community 304 "커뮤니티 화면으로이동"`);
+        res.render("home/community");
+    },
     forgetpassword: (req, res) => {
         res.render("home/ForgetPassword");
     },

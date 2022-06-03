@@ -14,9 +14,9 @@ class User {
             if (user.id === this.body.id && user.pw === this.body.pw) {
                 return { success: true};
             }
-            return { success: false, msg: "비밀번호가 틀렸습니다."}
+            return { success: false, msg: "비밀번호가 틀렸습니다."};
         }
-        return { success: false, msg: "존재하지 않는 아이디입니다."}
+        return { success: false, msg: "존재하지 않는 아이디입니다."};
     } catch (err) {
         return { success: false, err};
     }
@@ -24,7 +24,7 @@ class User {
     async register() {
         try {
         const response = await UserStorge.save(this.body);
-        return response;
+        return response, {success: true};
         } catch (err) {
             return { success: false, err};
         };

@@ -13,7 +13,7 @@ class UserStorge {
                 if (err) reject(`${err}`);
                 else resolve(data[0]);
             });
-        });
+        }); 
     }
 
     static async save(usersInfo) {
